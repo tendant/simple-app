@@ -15,7 +15,6 @@ fullnameOverride: ""
 
 app:
   name: simple-app
-  sha1: ""
   command:
     - "/app/echo-server"
   port: 3000
