@@ -12,6 +12,14 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+app:
+  name: simple-app
+  sha1: ""
+  command:
+    - "java"
+  config:
+    test_env: "This is test value"
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
