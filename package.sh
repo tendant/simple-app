@@ -5,7 +5,7 @@ set -ex
 VERSION=$(grep -e ^version Chart.yaml | cut -d' ' -f 2)
 
 if [ -z "$(git status --porcelain)" ]; then
-    git branch -D gh-pages
+    git branch --quiet -D gh-pages
     git checkout --orphan gh-pages
     git reset
     helm package .
