@@ -2,6 +2,7 @@
 
 set -ex
 if [ -z "$(git status --porcelain)" ]; then
+    git branch -D gh-pages
     git co --orphan gh-pages
     git reset
     helm package .
