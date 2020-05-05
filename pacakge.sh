@@ -1,9 +1,10 @@
 #!/bin/sh
 
 set -ex
+
 if [ -z "$(git status --porcelain)" ]; then
     git branch -D gh-pages
-    git co --orphan gh-pages
+    git checkout --orphan gh-pages
     git reset
     helm package .
     helm repo index . --url https://tendant.github.io/simple-app
@@ -11,6 +12,7 @@ if [ -z "$(git status --porcelain)" ]; then
     git commit -am "Update release"
     git clean -df
     git push -f origin gh-pages
+    git checkout master
 else
     echo "There is uncommitted change! Exiting without releasing."
     exit 1
