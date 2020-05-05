@@ -5,7 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: wang/alpine-rust-echo
+
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -16,7 +17,7 @@ app:
   name: simple-app
   sha1: ""
   command:
-    - "java"
+    - "echo_server"
   config:
     test_env: "This is test value"
 
