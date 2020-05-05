@@ -13,3 +13,4 @@ if [ -z "$(git status --porcelain)" ]; then
 else
     echo "There is uncommitted change! Exiting without releasing."
     exit 1
+fi
