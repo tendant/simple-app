@@ -29,9 +29,9 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
           - configMapRef:
-              name: {{ include "simple-app.fullname" . }}-configmap
+              name: {{ .Release.Name }}-configmap
           - secretRef:
-              name: {{ include "simple-app.fullname" . }}-secrets
+              name: {{ .Release.Name }}-secrets
           {{- if .Values.app.command }}
           command:
             {{- toYaml .Values.app.command | nindent 12 }}
