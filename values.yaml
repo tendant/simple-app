@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: wang/alpine-rust-echo
-
+  repository: wang/alpine-go-echo-server
+  version: 0.1
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -17,7 +17,8 @@ app:
   name: simple-app
   sha1: ""
   command:
-    - "echo_server"
+    - "/app/echo-server"
+  port: 3000
   config:
     test_env: "This is test value"
 
