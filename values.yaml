@@ -14,7 +14,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 app:
-  name: simple-app
+  name: my-app-name
   command:
     - "/app/echo-server"
   port: 3000
