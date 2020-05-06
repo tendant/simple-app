@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: wang/alpine-go-echo-server
-  version: 0.1
+  tag: 0.1
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
