@@ -40,6 +40,7 @@ spec:
           command:
             {{- toYaml .Values.app.command | nindent 12 }}
           {{- end }}
+          {{- if .Values.service.enabled }}
           ports:
             - name: http
               containerPort: {{ .Values.app.port }}
@@ -52,6 +53,7 @@ spec:
             httpGet:
               path: /
               port: http
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
