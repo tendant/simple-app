@@ -62,7 +62,7 @@ spec:
           {{- end }}
         {{- if .Values.sidecar.enabled }}
         - name: {{ .Values.sidecar.name }}
-          image: "{{ .Values.sidecar.image.repository }}:{{ .Values.sidecar.tag }}"
+          image: "{{ .Values.sidecar.image.repository }}:{{ .Values.sidecar.image.tag }}"
           imagePullPolicy: {{ .Values.sidecar.image.pullPolicy }}
           command:
             {{- toYaml .Values.sidecar.command | nindent 12 }}
