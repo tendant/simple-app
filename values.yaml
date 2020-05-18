@@ -37,10 +37,9 @@ app:
 sidecar:
   name: my-app-name-sidecar
   enabled: false
-  image:
-    repository: wang/alpine-go-echo-server
-    tag: 0.1
-    pullPolicy: IfNotPresent
+  sidecarTag: 0.1
+  sidecarRepository: wang/alpine-go-echo-server
+  sidecarPullPolicy: IfNotPresent
   port: 3001
   command:
     - "/app/echo-server"
