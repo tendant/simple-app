@@ -75,6 +75,17 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
+volumeMounts: []
+  # - name: demo-data
+  #   mountPath: /mnt/data
+  #   readonly: true
+
+volumes: []
+  # - name: demo-data
+  #   secret:
+  #     secretName: demo-secrets
+
+
 nodeSelector: {}
 
 tolerations: []
