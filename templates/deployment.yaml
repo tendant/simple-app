@@ -67,7 +67,7 @@ spec:
           command:
             {{- toYaml .Values.sidecar.command | nindent 12 }}
           ports:
-            - name: sidecarPort
+            - name: sidecar-port
               containerPort: {{ .Values.sidecar.port }}
               protocol: TCP
           {{- if .Values.sidecar.volumeMounts }}
