@@ -18,6 +18,14 @@ app:
   command:
     - "/app/echo-server"
   port: 3000
+  ## Enabled 'ports' If additional ports are needed
+  # ports:
+  #   - name: port2
+  #     containerPort: 3002
+  #     protocol: TCP
+  #   - name: port3
+  #     containerPort: 3003
+  #     protocol: UDP
   config:
     test_env: "This is test value"
   secrets: false # To enable secretRef, you need create a secret named as RELEASE-NAME-secrets
@@ -79,6 +87,16 @@ service:
   enabled: true
   type: ClusterIP
   port: 80
+  ## Enable 'ports', if additional ports are needed
+  # ports:
+  #   - name: port2
+  #     port: 3002
+  #     targetPort: port2
+  #     protocol: TCP
+  #   - name: port3
+  #     port: 3003
+  #     targetPort: port3
+  #     protocol: UDP
 
 ingress:
   enabled: false

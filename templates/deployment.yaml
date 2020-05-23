@@ -42,9 +42,14 @@ spec:
           {{- end }}
           {{- if .Values.service.enabled }}
           ports:
+          {{- if .Values.app.port }}
             - name: http
               containerPort: {{ .Values.app.port }}
               protocol: TCP
+          {{- end }}
+          {{- if .Values.app.ports }}
+            {{- toYaml .Values.app.ports | nindent 12 }}
+          {{- end }}
           {{- if .Values.app.livenessProbe }}
           livenessProbe:
             {{- toYaml .Values.app.livenessProbe | nindent 12}}
