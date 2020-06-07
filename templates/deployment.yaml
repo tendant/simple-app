@@ -67,8 +67,8 @@ spec:
           {{- end }}
         {{- if .Values.sidecar.enabled }}
         - name: {{ .Values.sidecar.name }}
-          image: "{{ .Values.sidecar.sidecarRepository }}:{{ .Values.sidecar.sidecarTag }}"
-          imagePullPolicy: {{ .Values.sidecar.sidecarPullPolicy }}
+          image: "{{ .Values.sidecar.image.repository }}:{{ .Values.sidecar.image.tag }}"
+          imagePullPolicy: {{ .Values.sidecar.image.pullPolicy }}
           command:
             {{- toYaml .Values.sidecar.command | nindent 12 }}
           ports:
