@@ -53,10 +53,20 @@ spec:
           {{- if .Values.app.livenessProbe }}
           livenessProbe:
             {{- toYaml .Values.app.livenessProbe | nindent 12}}
+          {{- else }}
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
           {{- end }}
           {{- if .Values.app.readinessProbe }}
           readinessProbe:
             {{- toYaml .Values.app.readinessProbe | nindent 12}}
+          {{- else }}
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
           {{- end }}
           {{- end }}
           resources:
