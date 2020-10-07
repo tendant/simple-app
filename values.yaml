@@ -31,11 +31,11 @@ app:
     test_env: "This is test value"
   secrets: false # To enable secretRef, you need create a secret named as RELEASE-NAME-secrets
   livenessProbe:
-  - httpGet:
+    httpGet:
       path: /
       port: http
   readinessProbe:
-  - httpGet:
+    httpGet:
       path: /
       port: http
   volumeMounts: []
