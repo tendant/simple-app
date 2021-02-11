@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  simple-app:
+  - apiVersion: v2
+    appVersion: 1.16.1
+    created: "2021-02-10T23:12:20.134128-08:00"
+    description: A Helm chart for Kubernetes
+    digest: 00cb44e4829eb13549575400ca571dafeed9c5e2b70ce30ceb1a7820b25b48c1
+    name: simple-app
+    type: application
+    urls:
+    - https://tendant.github.io/simple-app/simple-app-0.1.1.tgz
+    version: 0.1.1
+generated: "2021-02-10T23:12:20.132856-08:00"
