@@ -5,9 +5,15 @@ set -ex
 VERSION=$(grep -e ^version Chart.yaml | cut -d' ' -f 2)
 
 if [ -z "$(git status --porcelain)" ]; then
+    # Package master
     helm package .
+    # Package 0.1.3
+    git checkout 0.1.3
+    helm package .
+    # Package 0.1.2
     git checkout 0.1.2
     helm package .
+    # Package 0.1.1
     git checkout 0.1.1
     helm package .
     git rev-parse --verify --quiet gh-pages && git branch --quiet -D -f gh-pages
