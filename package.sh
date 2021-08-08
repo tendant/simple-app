@@ -28,8 +28,8 @@ if [ -z "$(git status --porcelain)" ]; then
     git add index.yaml simple-app-$VERSION.tgz
     for i in "${VERS[@]}"
     do
-        echo "Adding file: $i"
-        git add $i
+        echo "Adding file: simple-app-$i.tgz"
+        git add simple-app-$i.tgz
     done
     git commit -am "Update release"
     git clean -df
