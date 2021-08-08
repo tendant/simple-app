@@ -30,6 +30,7 @@ app:
   config:
     test_env: "This is test value"
   secrets: false # To enable secretRef, you need create a secret named as RELEASE-NAME-secrets
+  # secretName: test-secrets # default RELEASE-NAME-secrets
   # livenessProbe:
   #   httpGet:
   #     path: /

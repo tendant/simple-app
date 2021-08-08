@@ -32,7 +32,10 @@ spec:
           envFrom:
           - configMapRef:
               name: {{ .Release.Name }}-configmap
-          {{- if .Values.app.secrets }}
+          {{- if and .Values.app.secrets .Values.app.secretName }}
+          - secretRef:
+              name: {{ .Values.app.secretName }}
+          {{- else if .Values.app.secrets }}
           - secretRef:
               name: {{ .Release.Name }}-secrets
           {{- end }}
